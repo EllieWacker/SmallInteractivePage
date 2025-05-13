@@ -1,0 +1,104 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  background-image: url(beach.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#stitch_button{
+  font-family: 'Freckle Face', cursive;
+  font-size: 3vw;
+}
+
+#pooh_button{
+  font-family: 'Dancing Script', cursive;
+  font-size: 3vw;
+  font-weight: bold;
+}
+
+#mickey_button{
+  font-family: 'Josefin Slab', serif;
+  font-weight: bold;
+  font-size: 3vw;
+}
+
+button{
+  width: 70%;
+  display: grid;
+  background-color: #f6eeee;
+  margin: 2em 2em;
+  align-items: center;
+}
+
+button:hover{
+  transform: scale(1.2);
+}
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 1em;
+  margin: 1em 0;
+}
+
+img{
+  width: 70%;
+  opacity: 0;
+  margin-top: 1em;
+}
+
+#stitch{
+  animation: stitch 1.5s ease-in-out infinite;
+}
+
+#mickey{
+  animation: swing 3s ease-in-out infinite;
+}
+
+#pooh{
+  animation: bob 1s ease-in-out infinite;
+}
+
+.visible{
+  opacity: 100%;
+}
+
+@keyframes stitch {
+  0%, 100%{
+    transform: translate(5px);
+  }
+
+  50%{
+    transform: translate(-20px, 30px);
+  }
+}
+
+@keyframes swing {
+  0%, 100%{
+    transform: translateX(-10px);
+  }
+  10%{
+    transform: rotate(-15deg);
+  }
+  50%{
+    transform: translateX(5px);
+  }
+  60%{
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes bob {
+  0%, 100%{
+    transform: translateY(-10px);
+  }
+
+  50%{
+    transform: translateY(10px) perspective(64px) rotateX(-1deg);
+  }
+}
